@@ -1,20 +1,8 @@
 import {defineConfig} from 'vite';
+import {resolve} from 'path';
 import Inspect from 'vite-plugin-inspect';
 import handlebars from 'vite-plugin-handlebars';
-import {resolve} from 'path';
-import fs from 'fs';
-
-function getPagesInput() {
-   const pagesDir = resolve(__dirname, 'pages');
-   const pages = {};
-   fs.readdirSync(pagesDir).forEach(file => {
-      if (file.endsWith('.html')) {
-         const name = file.replace(/\.html$/, '');
-         pages[name] = resolve(pagesDir, file);
-      }
-   });
-   return pages;
-}
+import {viteStaticCopy} from 'vite-plugin-static-copy';
 
 export default defineConfig(({command, mode}) => {
    const isProd = mode === 'production';
@@ -33,6 +21,18 @@ export default defineConfig(({command, mode}) => {
                currentYear: new Date().getFullYear(),
             }),
          }),
+         viteStaticCopy({
+            targets: [
+               {
+                  src: 'src/assets/fonts/*',
+                  dest: 'assets/fonts'
+               },
+               {
+                  src: 'src/assets/images/*',
+                  dest: 'assets/images'
+               }
+            ]
+         })
       ],
       resolve: {
          alias: {
@@ -45,16 +45,21 @@ export default defineConfig(({command, mode}) => {
          rollupOptions: {
             input: {
                main: resolve(__dirname, 'main.js'),
-               ...getPagesInput(),
             },
             output: {
-               entryFileNames: `assets/[name]${isProd ? '' : ''}.js`,
-               chunkFileNames: `assets/[name]${isProd ? '' : ''}.js`,
+               entryFileNames: 'assets/[name].js',
+               chunkFileNames: 'assets/[name]-[hash].js',
                assetFileNames: (assetInfo) => {
                   if (assetInfo.name.endsWith('.css')) {
-                     return `assets/[name]${isProd ? '' : ''}[extname]`;
+                     return 'assets/[name][extname]';
                   }
-                  return `assets/[name][extname]`;
+                  if (/\.(woff|woff2|eot|ttf|otf)$/.test(assetInfo.name)) {
+                     return 'assets/fonts/[name][extname]';
+                  }
+                  if (/\.(png|jpe?g|gif|svg|webp)$/.test(assetInfo.name)) {
+                     return 'assets/images/[name][extname]';
+                  }
+                  return 'assets/[name]-[hash][extname]';
                }
             }
          },
@@ -65,8 +70,7 @@ export default defineConfig(({command, mode}) => {
       server: {
          watch: {
             usePolling: true,
-         },
-         open: '/pages/dashboard.html',
+         }
       }
    }
 });

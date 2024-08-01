@@ -9,4 +9,4 @@ Fancybox.bind("[data-fancybox]", {
    // Your custom options
 });
 
-console.log('test')
+console.log('test super')
