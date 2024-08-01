@@ -1,0 +1,8 @@
+@mixin wordSize($size, $height, $weight:400) {
+   font-size: $size + rem;
+   font-weight: $weight;
+   line-height: $height + rem;
+}
+
+// Cmd + B
+//@include wordSize(12, 1.5, 700)

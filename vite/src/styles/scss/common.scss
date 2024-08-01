@@ -1,0 +1,21 @@
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
+
+.main {
+   flex: 1 1 auto;
+}
+
+.container {
+   max-width: calc(toRem($container-width) + toRem(30));
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}

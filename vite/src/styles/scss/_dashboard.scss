@@ -1,0 +1,36 @@
+.dashboard {
+   border: #535bf2 1px solid;
+   padding: toRem(10);
+   margin: toRem(10);
+   background: #5eb0ef;
+   color: #535bf2;
+
+   &__container {
+      padding: 10px;
+   }
+
+   &__text-md {
+      @extend %text-md;
+   }
+
+   &__text-xs {
+      @extend %text-xs;
+   }
+
+   &__image{
+      width: toRem(100);
+      height: toRem(100);
+   }
+
+   h1 {
+      color: #535bf2;
+      font-size: 23px;
+      font-family: $font-primary;
+   }
+
+   h2 {
+      font-family: $font-secondary;
+      font-size: toRem(20);
+      font-weight: 600;
+   }
+}

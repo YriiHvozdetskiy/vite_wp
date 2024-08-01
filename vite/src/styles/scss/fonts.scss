@@ -1,0 +1,19 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+   @font-face {
+      font-family: $font-family;
+      src: url('#{$file-path}.woff') format('woff');
+      //url('#{$file-path}.woff2') format('woff2');
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+   }
+}
+
+// Crimson fonts
+@include font-face('Crimson', '@/fonts/Crimson-Roman', 400);
+@include font-face('Crimson', '@/fonts/Crimson-Semibold', 600);
+
+// Roboto fonts
+@include font-face('Roboto', '@/fonts/Roboto-Regular', 400);
+@include font-face('Roboto', '@/fonts/Roboto-Medium', 500);
+@include font-face('Roboto', '@/fonts/Roboto-Bold', 700);

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{title}}</title>
+</head>
+<body>
+
+{{> header}}
+
+<nav>
+   <a href="/pages/dashboard.html">Dashboard</a>
+   <a href="/pages/about.html">Про нас</a>
+   <a href="/pages/faq.html">FAQ</a>
+   <!-- Додайте інші посилання на ваші сторінки тут -->
+</nav>
+<div class="about">
+   <h1>Ласкаво просимо на About</h1>
+</div>
+{{> footer
+   title="Welcome to our website"
+   text="Discover more about our services and products."
+   links=(array
+      (hash url="/about" text="About Us")
+      (hash url="/services" text="Our Services")
+      (hash url="/contact" text="Contact Us")
+   )
+   socialLinks=(array
+      (hash url="https://facebook.com" text="facebook" icon="/icons/vite.svg")
+      (hash url="https://twitter.com" text="twitter" )
+      (hash url="https://instagram.com" text="instagram" )
+   )
+}}
+<script type="module" src="/main.js"></script>
+</body>
+</html>
