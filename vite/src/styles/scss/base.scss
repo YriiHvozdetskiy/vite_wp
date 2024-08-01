@@ -9,6 +9,14 @@
    box-sizing: border-box;
 }
 
+html {
+   font-size: $base-font-size + px;
+
+   @media screen and (max-width: 1023px) {
+      font-size: $base-font-size * 0.9 + px;
+   }
+}
+
 html,
 body {
    height: 100%;
@@ -52,6 +60,7 @@ button {
    background-color: inherit;
    //remove blue flashing in chrome when clicked
    -webkit-tap-highlight-color: transparent;
+
    &:disabled {
       cursor: auto;
    }

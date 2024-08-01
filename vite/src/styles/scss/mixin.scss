@@ -6,3 +6,32 @@
 
 // Cmd + B
 //@include wordSize(12, 1.5, 700)
+
+@mixin media-breakpoint($breakpoint, $direction: 'min') {
+   $breakpoint-value: $breakpoint;
+
+   @if type-of($breakpoint) == string {
+      $breakpoint-map: (
+         sm: $breakpoint-sm,
+         md: $breakpoint-md,
+         lg: $breakpoint-lg,
+         xl: $breakpoint-xl,
+         2xl: $breakpoint-2xl
+      );
+      $breakpoint-value: map-get($breakpoint-map, $breakpoint);
+   }
+
+   @if $breakpoint-value {
+      @if $direction == 'min' {
+         @media (min-width: $breakpoint-value) {
+            @content;
+         }
+      } @else if $direction == 'max' {
+         @media (max-width: $breakpoint-value - 1px) {
+            @content;
+         }
+      }
+   } @else {
+      @error "Invalid breakpoint: #{$breakpoint}";
+   }
+}

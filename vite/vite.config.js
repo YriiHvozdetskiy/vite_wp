@@ -40,7 +40,7 @@ export default defineConfig(({command, mode}) => {
          },
       },
       build: {
-         outDir: resolve(__dirname, '../themes/project_name/dist'),
+         outDir: resolve(__dirname, '../themes/heliconapps/dist'),
          emptyOutDir: true,
          rollupOptions: {
             input: {
@@ -54,7 +54,7 @@ export default defineConfig(({command, mode}) => {
                      return 'assets/[name][extname]';
                   }
                   if (/\.(woff|woff2|eot|ttf|otf)$/.test(assetInfo.name)) {
-                     return 'assets/fonts/[name][extname]';
+                     return 'fonts/[name][extname]';
                   }
                   if (/\.(png|jpe?g|gif|svg|webp)$/.test(assetInfo.name)) {
                      return 'assets/images/[name][extname]';

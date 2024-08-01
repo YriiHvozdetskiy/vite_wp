@@ -17,9 +17,9 @@
       @extend %text-xs;
    }
 
-   &__image{
-      width: toRem(100);
-      height: toRem(100);
+   &__image {
+      width: toRem(50);
+      height: toRem(50);
    }
 
    h1 {
@@ -32,5 +32,30 @@
       font-family: $font-secondary;
       font-size: toRem(20);
       font-weight: 600;
+      color: yellow;
+
+      @include media-breakpoint(md) {
+         font-size: 10px;
+      }
+   }
+}
+
+.example-class {
+   font-size: toRem(20);
+
+   @include media-breakpoint(md) {
+      font-size: 10px;
+   }
+
+   @include media-breakpoint(lg, 'max') {
+      color: blue;
+   }
+
+   @include media-breakpoint(500px) {
+      border: solid 1px tomato;
+   }
+
+   @include media-breakpoint(800px, 'max') {
+      margin: 10px;
    }
 }

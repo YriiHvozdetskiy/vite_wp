@@ -2,18 +2,20 @@
    @font-face {
       font-family: $font-family;
       src: url('#{$file-path}.woff') format('woff');
+      //src: url('../fonts/#{$file-path}.woff') format('woff'); // for WP
       //url('#{$file-path}.woff2') format('woff2');
+      //src: url('../fonts/#{$file-path}.woff2') format('woff2'); // for WP
+
       font-weight: $weight;
       font-style: $style;
       font-display: swap;
    }
 }
 
-// Crimson fonts
+// remove @/fonts/ for WP
 @include font-face('Crimson', '@/fonts/Crimson-Roman', 400);
 @include font-face('Crimson', '@/fonts/Crimson-Semibold', 600);
 
-// Roboto fonts
 @include font-face('Roboto', '@/fonts/Roboto-Regular', 400);
 @include font-face('Roboto', '@/fonts/Roboto-Medium', 500);
 @include font-face('Roboto', '@/fonts/Roboto-Bold', 700);
