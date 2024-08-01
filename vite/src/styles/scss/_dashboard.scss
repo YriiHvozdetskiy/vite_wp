@@ -51,11 +51,25 @@
       color: blue;
    }
 
-   @include media-breakpoint(500px) {
+   @include media-breakpoint(500, 'max') {
+      font-size: 55px;
+   }
+
+   @include media-breakpoint(800, 'max') {
+      margin: 10px;
+   }
+
+   @include media-breakpoint(xl, 'max') {
       border: solid 1px tomato;
    }
 
-   @include media-breakpoint(800px, 'max') {
+   // min - не потрібно писати
+   @include media-breakpoint(1680) {
+      font-size: toRem(12);
+   }
+
+   @media (min-width: $breakpoint-xl) and (max-width: $breakpoint-2xl - 1px) {
       margin: 10px;
    }
+
 }
