@@ -1,21 +1,18 @@
 {
-  "name": "vite-wordpress-theme",
+  "name": "vite_wp",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "wp-dev": "vite build --watch --mode development"
+    "build": "vite build --mode production",
+    "build:dev": "vite build --mode development",
+    "watch": "vite build --watch --mode development"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "sass": "^1.77.8",
+    "sass": "^1.77.2",
     "vite": "^5.3.5",
-    "vite-plugin-handlebars": "^2.0.0",
-    "vite-plugin-inspect": "^0.8.5"
+    "vite-plugin-inspect": "^0.8.4"
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
