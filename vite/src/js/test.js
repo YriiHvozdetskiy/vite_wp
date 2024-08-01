@@ -1,12 +1,6 @@
 import $ from 'jquery';
-import {Fancybox} from '@fancyapps/ui';
 
 $(document).ready(function () {
-   $("#app").html("Hello World");
+   $("body").append("<p>This text was added using jQuery</p>");
+   console.log('test.js ready');
 });
-
-Fancybox.bind("[data-fancybox]", {
-   // Your custom options
-});
-
-console.log('test loaded');
