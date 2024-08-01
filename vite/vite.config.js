@@ -40,7 +40,7 @@ export default defineConfig(({command, mode}) => {
          },
       },
       build: {
-         outDir: resolve(__dirname, '../themes/heliconapps/dist'),
+         outDir: resolve(__dirname, '../themes/project_name/dist'),
          emptyOutDir: true,
          rollupOptions: {
             input: {
