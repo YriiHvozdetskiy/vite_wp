@@ -71,5 +71,14 @@
    @media (min-width: $breakpoint-xl) and (max-width: $breakpoint-2xl - 1px) {
       margin: 10px;
    }
+}
 
+.truncate{
+   margin-bottom: toRem(20);
+   @include text-truncate;
+}
+
+.three-lines {
+   width: toRem(100);
+   @include line-clamp(3);
 }

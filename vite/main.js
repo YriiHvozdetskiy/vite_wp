@@ -3,16 +3,15 @@ import "normalize.css";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "@/styles/scss/main.scss";
 
-// JavaScript
-import $ from 'jquery';
-
 // Plugins
+import $ from 'jquery';
 import {Fancybox} from '@fancyapps/ui';
 
+// JavaScript
 import '@/js/test.js';
 import '@/js/app.js';
 
-// // import fonts explicitly for WP
+// import fonts explicitly for WP
 // import.meta.glob([
 //    '/src/fonts/*.woff',
 //    '/src/fonts/*.woff2',
@@ -23,7 +22,7 @@ $(document).ready(function () {
 });
 
 Fancybox.bind("[data-fancybox]", {
-   // Ваші користувацькі опції
+   // Your custom options
 });
 
 console.log('Main script loaded');

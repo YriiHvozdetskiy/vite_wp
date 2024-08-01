@@ -39,3 +39,44 @@
       @error "Invalid breakpoint: #{$breakpoint}";
    }
 }
+
+// Cuts off overflowing text with an ellipsis
+@mixin text-truncate {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+// Limits text to a specific number of lines
+@mixin line-clamp($lines: 1) {
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: $lines;
+   @supports not (-webkit-line-clamp: $lines) {
+      display: block;
+      position: relative;
+      max-height: calc(1.2em * #{$lines});
+      padding-right: 1rem;
+      &::before {
+         content: '...';
+         position: absolute;
+         right: 0;
+         bottom: 0;
+      }
+      &::after {
+         content: '';
+         position: absolute;
+         right: 0;
+         width: 1rem;
+         height: 1rem;
+         background: white;
+      }
+   }
+}
+
+// Aligns numbers by setting them to equal widths
+@mixin tabular-nums {
+   font-variant-numeric: tabular-nums;
+   font-feature-settings: "tnum";
+}
