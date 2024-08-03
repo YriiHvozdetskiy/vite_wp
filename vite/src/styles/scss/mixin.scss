@@ -1,12 +1,3 @@
-@mixin wordSize($size, $height, $weight:400) {
-   font-size: $size + rem;
-   font-weight: $weight;
-   line-height: $height + rem;
-}
-
-// Cmd + B
-//@include wordSize(12, 1.5, 700)
-
 @mixin media-breakpoint($breakpoint, $direction: 'min') {
    $breakpoint-value: $breakpoint;
 
@@ -80,3 +71,5 @@
    font-variant-numeric: tabular-nums;
    font-feature-settings: "tnum";
 }
+
+// Cmd + B

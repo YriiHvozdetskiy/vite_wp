@@ -1,6 +1,7 @@
 import {defineConfig} from 'vite';
 import {resolve} from 'path';
 import fs from 'fs';
+
 import Inspect from 'vite-plugin-inspect';
 import handlebars from 'vite-plugin-handlebars';
 import {viteStaticCopy} from 'vite-plugin-static-copy';
@@ -41,7 +42,7 @@ export default defineConfig(({command, mode}) => {
                },
                {
                   src: 'src/assets/images/*',
-                  dest: 'images'  // Змінено з 'assets/images' на 'images'
+                  dest: 'images'
                }
             ]
          })
@@ -54,6 +55,7 @@ export default defineConfig(({command, mode}) => {
       build: {
          outDir: resolve(__dirname, '../themes/project_name/dist'),
          emptyOutDir: true,
+         sourcemap: false,
          rollupOptions: {
             input: {
                main: resolve(__dirname, 'main.js'),
@@ -70,7 +72,7 @@ export default defineConfig(({command, mode}) => {
                      return 'fonts/[name][extname]';
                   }
                   if (/\.(png|jpe?g|gif|svg|webp)$/.test(assetInfo.name)) {
-                     return 'images/[name][extname]';  // Змінено з 'assets/images/[name][extname]' на 'images/[name][extname]'
+                     return 'images/[name][extname]';
                   }
                   return 'assets/[name]-[hash][extname]';
                }
@@ -78,7 +80,6 @@ export default defineConfig(({command, mode}) => {
          },
          minify: isProd,
          cssMinify: isProd,
-         // sourcemap: !isProd,
          polyfillModulePreload: false,
       },
       server: {
