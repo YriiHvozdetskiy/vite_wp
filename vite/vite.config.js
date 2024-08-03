@@ -9,11 +9,9 @@ import {viteStaticCopy} from 'vite-plugin-static-copy';
 export default defineConfig(({command, mode}) => {
    const isProd = mode === 'production';
 
-   // Читаємо вміст папки pages
    const pagesDir = resolve(__dirname, 'pages');
    const pageFiles = fs.readdirSync(pagesDir).filter(file => file.endsWith('.html'));
 
-   // Створюємо об'єкт input для rollupOptions
    const pagesInput = pageFiles.reduce((acc, file) => {
       const name = file.replace('.html', '');
       acc[name] = resolve(pagesDir, file);
