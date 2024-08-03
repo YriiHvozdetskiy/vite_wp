@@ -8,9 +8,11 @@ import {viteStaticCopy} from 'vite-plugin-static-copy';
 export default defineConfig(({command, mode}) => {
    const isProd = mode === 'production';
 
+   // Читаємо вміст папки pages
    const pagesDir = resolve(__dirname, 'pages');
    const pageFiles = fs.readdirSync(pagesDir).filter(file => file.endsWith('.html'));
 
+   // Створюємо об'єкт input для rollupOptions
    const pagesInput = pageFiles.reduce((acc, file) => {
       const name = file.replace('.html', '');
       acc[name] = resolve(pagesDir, file);
@@ -39,7 +41,7 @@ export default defineConfig(({command, mode}) => {
                },
                {
                   src: 'src/assets/images/*',
-                  dest: 'assets/images'
+                  dest: 'images'  // Змінено з 'assets/images' на 'images'
                }
             ]
          })
@@ -68,7 +70,7 @@ export default defineConfig(({command, mode}) => {
                      return 'fonts/[name][extname]';
                   }
                   if (/\.(png|jpe?g|gif|svg|webp)$/.test(assetInfo.name)) {
-                     return 'assets/images/[name][extname]';
+                     return 'images/[name][extname]';  // Змінено з 'assets/images/[name][extname]' на 'images/[name][extname]'
                   }
                   return 'assets/[name]-[hash][extname]';
                }
@@ -76,7 +78,8 @@ export default defineConfig(({command, mode}) => {
          },
          minify: isProd,
          cssMinify: isProd,
-         sourcemap: !isProd,
+         // sourcemap: !isProd,
+         polyfillModulePreload: false,
       },
       server: {
          watch: {
