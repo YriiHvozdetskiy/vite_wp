@@ -1,11 +1,21 @@
 import {defineConfig} from 'vite';
 import {resolve} from 'path';
+import fs from 'fs';
 import Inspect from 'vite-plugin-inspect';
 import handlebars from 'vite-plugin-handlebars';
 import {viteStaticCopy} from 'vite-plugin-static-copy';
 
 export default defineConfig(({command, mode}) => {
    const isProd = mode === 'production';
+
+   const pagesDir = resolve(__dirname, 'pages');
+   const pageFiles = fs.readdirSync(pagesDir).filter(file => file.endsWith('.html'));
+
+   const pagesInput = pageFiles.reduce((acc, file) => {
+      const name = file.replace('.html', '');
+      acc[name] = resolve(pagesDir, file);
+      return acc;
+   }, {});
 
    return {
       plugins: [
@@ -45,6 +55,7 @@ export default defineConfig(({command, mode}) => {
          rollupOptions: {
             input: {
                main: resolve(__dirname, 'main.js'),
+               ...pagesInput
             },
             output: {
                entryFileNames: 'assets/[name].js',
