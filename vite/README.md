@@ -1,3 +1,9 @@
+
+
+============ [DO NOT MODIFY FILES IN THE] themes/*/dist  ============
+
+
+
 ## Available Scripts
 
 In the project directory, you can run: | У директорії проекту ви можете запустити:
