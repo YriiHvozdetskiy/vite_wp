@@ -1,0 +1,26 @@
+h1 {
+   font-weight: 700;
+
+   &:not(:last-child) {
+      margin-bottom: toRem(20);
+   }
+}
+
+.product-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(toRem(200), 1fr));
+   gap: toRem(10);
+
+   // .product-list__item
+   &__item {
+   }
+}
+
+.card-grid {
+}
+
+.card {
+}
+
+.card-content {
+}

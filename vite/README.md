@@ -6,8 +6,7 @@
 
 ## Available Scripts
 
-In the project directory, you can run: | У директорії проекту ви можете запустити:
-
+In the project directory, you can run:
 ### `pnpm dev`
 
 Runs the app in the development mode.
@@ -33,7 +32,8 @@ This is useful when you're developing a theme and want to see changes without re
 `"dev": "vite"`
 [pages/*.html]
     on each page:
-        <script type="module" src="/main.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="module" src="/main.js"></script>
 
 
 `"watch": "vite build --watch --mode development"`

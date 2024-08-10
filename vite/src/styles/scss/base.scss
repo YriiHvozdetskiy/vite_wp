@@ -12,9 +12,9 @@
 html {
    font-size: $base-font-size + px;
 
-   @media screen and (max-width: 1023px) {
-      font-size: $base-font-size * 0.9 + px;
-   }
+   //@media screen and (max-width: 1023px) {
+   //   font-size: $base-font-size * 0.9 + px;
+   //}
 }
 
 html,

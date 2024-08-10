@@ -11,6 +11,6 @@ import "@/styles/scss/main.scss";
 
 // JavaScript
 import '@/js/app.js';
-import '@/js/test.js';
+// import '@/js/test.js';
 
 console.log('Main script loaded');

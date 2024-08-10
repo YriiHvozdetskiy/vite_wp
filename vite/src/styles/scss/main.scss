@@ -2,13 +2,16 @@
 @import 'variables';
 @import 'utils';
 @import 'mixin.scss';
-@import "placeholder";
+@import 'placeholder';
 
 @import 'base.scss';
 @import 'common.scss';
 
+// components
+@import "footer";
+
+// pages
 @import "dashboard";
 @import "about";
 @import "faq";
-
-@import "footer";
+@import "grid";
