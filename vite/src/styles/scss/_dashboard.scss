@@ -6,7 +6,13 @@
    color: #535bf2;
 
    &__container {
-      padding: 10px;
+      padding: toRem(10);
+   }
+
+   &__title {
+      color: $color-primary;
+      font-size: clamp(toRem(12), 5vw, toRem(32));
+      font-family: $font-primary;
    }
 
    &__text-md {
@@ -20,12 +26,6 @@
    &__image {
       width: toRem(50);
       height: toRem(50);
-   }
-
-   h1 {
-      color: #535bf2;
-      font-size: toRem(23);
-      font-family: $font-primary;
    }
 
    h2 {
@@ -73,7 +73,7 @@
    }
 }
 
-.truncate{
+.truncate {
    margin-bottom: toRem(20);
    @include text-truncate;
 }

@@ -102,9 +102,9 @@ li {
 
 img {
    display: block;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+   max-width: 100%;
+   height: auto;
+   vertical-align: middle;
 }
 
 h1,
@@ -121,6 +121,7 @@ h6 {
 
 svg {
    display: inline-block;
+   vertical-align: middle;
 }
 
 mark {
@@ -143,4 +144,13 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
    -moz-appearance: textfield;
+}
+
+// fix autofill color
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+   -webkit-text-fill-color: white;
+   -webkit-box-shadow: 0 0 0 1000px $color-primary inset;
+   transition: background-color 15ms ease-in-out 0s;
 }
