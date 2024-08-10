@@ -44,6 +44,7 @@
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: $lines;
+
    @supports not (-webkit-line-clamp: $lines) {
       display: block;
       position: relative;

@@ -17,10 +17,39 @@ h1 {
 }
 
 .card-grid {
-}
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(toRem(200), 1fr));
+   gap: toRem(10);
+   //grid-auto-rows: minmax(auto, toRem(300));
 
-.card {
-}
+   // .card-grid__card
+   &__card {
+      display: grid;
+      gap: toRem(10);
+      grid-template-rows: auto 1fr;
 
-.card-content {
+      & > img {
+         //width: toRem(100);
+         width: 100%;
+         height: toRem(100);
+         object-fit: cover;
+      }
+   }
+
+   // .card-grid__card-content
+   &__card-content {
+      display: grid;
+      gap: toRem(10);
+      grid-template-rows: auto 1fr auto;
+
+      & > h2 {
+         align-items: flex-end;
+
+         @include text-truncate;
+      }
+
+      & > p {
+         @include line-clamp(5);
+      }
+   }
 }
