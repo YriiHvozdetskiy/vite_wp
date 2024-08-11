@@ -7,9 +7,16 @@
     "dev": "vite",
     "build": "vite build --mode production",
     "build:dev": "vite build --mode development",
-    "watch": "vite build --watch --mode development"
+    "watch": "vite build --watch --mode development",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"src/**/*.{js,scss,css,html,json}\""
   },
   "devDependencies": {
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
     "sass": "^1.77.2",
     "vite": "^5.3.5",
     "vite-plugin-handlebars": "^2.0.0",
