@@ -1,63 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dashboard</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard</title>
+	</head>
+	<body>
+		{{> header title="navigations on dashboard page" }}
 
-{{> header
-   title="navigations on dashboard page"
-}}
-
-<div class="dashboard">
-   <div class="container">
-      <h1 class="dashboard__title">Ласкаво просимо на Dashboard</h1>
-      <h2>Ви ввійшли як</h2>
-   </div>
-   <div>
-      <div class="dashboard__text-md">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores autem deleniti, dolorem earum
-            error facilis fugiat ipsam laborum necessitatibus nesciunt nobis officiis possimus quasi similique sit
-            veniam
-            veritatis voluptatem?</p>
-      </div>
-      <div class="dashboard__text-xs">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores autem deleniti, dolorem earum
-            error facilis fugiat ipsam laborum necessitatibus nesciunt nobis officiis possimus quasi similique sit
-            veniam
-            veritatis voluptatem?</p>
-      </div>
-   </div>
-</div>
-<p class="example-class">
-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at delectus deserunt dicta ducimus eligendi enim
-   ex exercitationem id illo itaque, nesciunt odio, placeat saepe sequi soluta tenetur ut, voluptate.
-</p>
-<br>
-<p>123</p>
-<br>
-<div class="truncate" style="width: 150px;">
-   Цей довгий текст буде обрізано і в кінці з'являться
-</div>
-<br>
-<p class="three-lines">Цей текст може займати до трьох рядків, перш ніж буде обрізаний.</p>
-<img class="dashboard__image" src="/public/images/tip.jpg" alt="tip">
-{{> footer
-   title="Welcome to our website"
-   text="Discover more about our services and products."
-   links=(array
-   (hash url="/about" text="About Us edit")
-   (hash url="/services" text="Our Services")
-   (hash url="/contact" text="Contact Us")
-   )
-   socialLinks=(array
-   (hash url="https://facebook.com" text="facebook" icon="/icons/vite.svg")
-   (hash url="https://twitter.com" text="twitter" )
-   (hash url="https://instagram.com" text="instagram" )
-   )
-}}
-<script type="module" src="/main.js"></script>
-</body>
+		<div class="dashboard">
+			<div class="container">
+				<h1 class="dashboard__title">Ласкаво просимо на Dashboard</h1>
+				<h2>Ви ввійшли як</h2>
+			</div>
+			<div>
+				<div class="dashboard__text-md">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores autem deleniti, dolorem
+						earum error facilis fugiat ipsam laborum necessitatibus nesciunt nobis officiis possimus quasi
+						similique sit veniam veritatis voluptatem?
+					</p>
+				</div>
+				<div class="dashboard__text-xs">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores autem deleniti, dolorem
+						earum error facilis fugiat ipsam laborum necessitatibus nesciunt nobis officiis possimus quasi
+						similique sit veniam veritatis voluptatem?
+					</p>
+				</div>
+			</div>
+		</div>
+		 <p class="example-class">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at delectus deserunt dicta ducimus eligendi
+			enim ex exercitationem id illo itaque, nesciunt odio, placeat saepe sequi soluta tenetur ut, voluptate.
+		</p>
+		<br />
+		<p>123</p>
+		<br />
+		<div class="truncate" style="width: 150px">Цей довгий текст буде обрізано і в кінці з'являться</div>
+		<br />
+		<p class="three-lines">Цей текст може займати до трьох рядків, перш ніж буде обрізаний.</p>
+		<img
+         class="dashboard__image"
+         src="/public/images/tip.jpg" alt="tip" />
+		{{> footer title="Welcome to our website" text="Discover more about our services and products." links=(array (hash
+		url="/about" text="About Us edit") (hash url="/services" text="Our Services") (hash url="/contact" text="Contact
+		Us") ) socialLinks=(array (hash url="https://facebook.com" text="facebook" icon="/icons/vite.svg") (hash
+		url="https://twitter.com" text="twitter" ) (hash url="https://instagram.com" text="instagram" ) ) }}
+		<script type="module" src="/main.js"></script>
+	</body>
 </html>
