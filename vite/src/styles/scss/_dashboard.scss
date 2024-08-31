@@ -97,8 +97,11 @@ button {
    background-color: blue;
 
    &:hover {
-      background-color: darken(blue, 10%); // darken - затемнює вказаний колір
+      @include any-hover {
+         background-color: darken(blue, 10%); // darken - затемнює вказаний колір
+      }
    }
+
 }
 
 
