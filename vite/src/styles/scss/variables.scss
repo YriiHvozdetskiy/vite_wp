@@ -18,3 +18,14 @@ $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1536px;
 $breakpoint-3xl: 1920px;
 $breakpoint-4xl: 2560px;
+
+// Стандартні функції easing
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); // моя
+
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+// Додаткові функції для більш специфічних анімацій
+$bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$smooth: cubic-bezier(0.25, 0.1, 0.25, 1);

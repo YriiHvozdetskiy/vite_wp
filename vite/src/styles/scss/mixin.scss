@@ -73,6 +73,10 @@
    font-feature-settings: "tnum";
 }
 
+@mixin transition($property, $easing: $ease-in-out, $duration: 0.25s) {
+   transition: $property $duration $easing;
+}
+
 // Cmd + B
 
 

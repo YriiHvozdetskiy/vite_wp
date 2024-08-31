@@ -82,3 +82,113 @@
    width: toRem(100);
    @include line-clamp(3);
 }
+
+// чи потрібно ??!
+@mixin any-hover {
+   @media (any-hover: hover) {
+      @content;
+   }
+}
+
+// Приклад використання:
+button {
+   //@include transition(background-color);
+   @include transition(all, $ease-in-out);
+   background-color: blue;
+
+   &:hover {
+      background-color: darken(blue, 10%); // darken - затемнює вказаний колір
+   }
+}
+
+
+// Приклад використання:
+.demo {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(toRem(200), 1fr));
+   //grid-auto-rows: minmax(toRem(200), auto);
+   gap: 20px;
+
+   &__image{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.color-demo {
+   display: grid;
+   grid-template-rows: auto toRem(150) auto;
+   //grid-template-rows: auto 1fr auto;
+   gap: 10px;
+   background-color: #fff;
+   border-radius: 5px;
+   padding: 20px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.color-box {
+   border: 1px solid #ddd;
+}
+
+.base-color {
+   background-color: #3498db;
+}
+
+.lighten-example {
+   background-color: #7cb9e8;
+}
+
+.darken-example {
+   background-color: #1f5d87;
+}
+
+.saturate-example {
+   background-color: #2e8bcc;
+}
+
+.desaturate-example {
+   background-color: #618fb0;
+}
+
+.mix-example {
+   background-color: #5570ac;
+}
+
+.adjust-hue-example {
+   background-color: #34db98;
+}
+
+.complement-example {
+   background-color: #db9834;
+}
+
+$base-color: #3498db; // Синій колір
+
+.lighten-example {
+   color: lighten($base-color, 20%); // Освітлений на 20%
+}
+
+.darken-example {
+   color: darken($base-color, 20%); // Затемнений на 20%
+}
+
+.saturate-example {
+   color: saturate($base-color, 50%); // Насиченість збільшена на 50%
+}
+
+.desaturate-example {
+   color: desaturate($base-color, 50%); // Насиченість зменшена на 50%
+}
+
+.mix-example {
+   color: mix($base-color, #e74c3c, 50%); // Змішаний з червоним 50/50
+}
+
+.adjust-hue-example {
+   color: adjust-hue($base-color, 60deg); // Відтінок зміщений на 60 градусів
+}
+
+.complement-example {
+   color: complement($base-color); // Комплементарний колір
+}

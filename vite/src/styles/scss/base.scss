@@ -1,16 +1,33 @@
 //set the element to which we want to scroll
 //:target {
-//   scroll-margin-top: 8rem;
+//   scroll-margin-top: 2rem;
 //}
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+   * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
 }
 
 html {
    font-size: $base-font-size + px;
+   scroll-behavior: smooth;
 
    //@media screen and (max-width: 1023px) {
    //   font-size: $base-font-size * 0.9 + px;
@@ -46,28 +63,43 @@ button,
 textarea,
 optgroup,
 select {
-   font-family: $font-primary;
-   font-size: inherit;
-}
-
-select {
-   cursor: pointer;
+   font: inherit;
 }
 
 button {
-   cursor: pointer;
    color: inherit;
-   background-color: inherit;
-   //remove blue flashing in chrome when clicked
-   -webkit-tap-highlight-color: transparent;
+   background-color: transparent;
+   border: none;
+   padding: 0;
 
    &:disabled {
-      cursor: auto;
+      cursor: not-allowed;
    }
 }
 
-picture {
+img,
+picture,
+video,
+canvas,
+svg {
    display: block;
+   max-width: 100%;
+}
+
+img, svg {
+   vertical-align: middle;
+}
+
+select,
+button,
+a {
+   cursor: pointer;
+}
+
+button,
+a {
+   //remove blue flashing in chrome when clicked
+   -webkit-tap-highlight-color: transparent;
 }
 
 p {
@@ -76,19 +108,8 @@ p {
 }
 
 a {
-   cursor: pointer;
    display: inline-block;
    color: inherit;
-   //remove blue flashing in chrome when clicked
-   -webkit-tap-highlight-color: transparent;
-}
-
-a:link,
-a:visited {
-   text-decoration: none;
-}
-
-a:hover {
    text-decoration: none;
 }
 
@@ -100,32 +121,15 @@ li {
    padding: 0;
 }
 
-img {
-   display: block;
-   max-width: 100%;
-   height: auto;
-   vertical-align: middle;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-   font-weight: inherit;
-   font-size: inherit;
+   font: inherit;
    padding: 0;
    margin: 0;
-}
-
-svg {
-   display: inline-block;
-   vertical-align: middle;
-}
-
-mark {
-   background: transparent;
 }
 
 blockquote {
@@ -151,6 +155,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
    -webkit-text-fill-color: white;
-   -webkit-box-shadow: 0 0 0 1000px $color-primary inset;
+   -webkit-box-shadow: 0 0 0 toRem(1000) $color-primary inset;
    transition: background-color 15ms ease-in-out 0s;
 }
