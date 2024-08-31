@@ -34,7 +34,7 @@
       font-weight: 600;
       color: yellow;
 
-      @include media-breakpoint(md) {
+      @include media-breakpoint($breakpoint-md) {
          font-size: 10px;
       }
    }
@@ -43,11 +43,11 @@
 .example-class {
    font-size: toRem(20);
 
-   @include media-breakpoint(md) {
+   @include media-breakpoint($breakpoint-md) {
       font-size: 10px;
    }
 
-   @include media-breakpoint(lg, 'max') {
+   @include media-breakpoint($breakpoint-lg, 'max') {
       color: blue;
    }
 
@@ -59,7 +59,7 @@
       margin: 10px;
    }
 
-   @include media-breakpoint(xl, 'max') {
+   @include media-breakpoint($breakpoint-xl, 'max') {
       border: solid 1px tomato;
    }
 
