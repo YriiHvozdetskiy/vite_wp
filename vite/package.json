@@ -9,6 +9,11 @@
     "build:dev": "vite build --mode development",
     "watch": "vite build --watch --mode development"
   },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "jquery": "^3.7.1",
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "prettier": "^3.3.3",
     "sass": "^1.77.2",
@@ -16,10 +21,5 @@
     "vite-plugin-handlebars": "^2.0.0",
     "vite-plugin-inspect": "^0.8.4",
     "vite-plugin-static-copy": "^1.0.6"
-  },
-  "dependencies": {
-    "@fancyapps/ui": "^5.0.36",
-    "jquery": "^3.7.1",
-    "normalize.css": "^8.0.1"
   }
 }
