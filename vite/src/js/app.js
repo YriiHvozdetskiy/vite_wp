@@ -1,5 +1,5 @@
 import $ from 'jquery';
 
 $(window).on('load', function () {
-	console.log('app.js loaded');
+   console.log('app.js loaded');
 });
