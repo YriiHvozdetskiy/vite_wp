@@ -112,7 +112,7 @@ button {
    //grid-auto-rows: minmax(toRem(200), auto);
    gap: 20px;
 
-   &__image{
+   &__image {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -165,6 +165,64 @@ button {
 .complement-example {
    background-color: #db9834;
 }
+
+// /* ============================  START ================================================================= */
+.title {
+   font-size: toRem(32);
+   margin-bottom: toRem(24);
+}
+
+.rem-example, .em-example {
+   margin-bottom: toRem(40);
+}
+
+h2 {
+   font-size: toRem(24);
+   margin-bottom: toRem(16);
+}
+
+.rem-text {
+   font-size: toRem(18);
+   margin-bottom: toRem(16);
+}
+
+.rem-box {
+   background-color: #f0f0f0;
+   padding: toRem(20);
+   width: toRem(300);
+   height: toRem(150);
+}
+
+// ============================================================================================
+.em-example {
+   font-size: 16px; // Встановлюємо базовий розмір для em прикладу КОНТЕКСТУ
+}
+
+.em-text {
+   font-size: toEm(18, 16); // другий параметр - контекст
+   margin-bottom: toEm(16, 16); // другий параметр - контекст
+}
+
+.em-box {
+   background-color: #e0e0e0;
+   padding: toEm(20, 16); // другий параметр - контекст
+   width: toEm(300, 16); // другий параметр - контекст
+   height: toEm(150, 16); // другий параметр - контекст
+
+   p {
+      margin-bottom: toEm(15, 16); // Використовуємо 16 як контекст, бо .em-text має font-size: 16px
+      padding-block: toEm(12, 16);
+   }
+}
+
+.em-nested {
+   font-size: toEm(14, 16); // Використовуємо 16 як контекст від батьківського елемента
+   background-color: #d0d0d0;
+   padding: toEm(5, 16);
+   display: inline-block;
+}
+
+/* ============================  END ================================================================= */
 
 $base-color: #3498db; // Синій колір
 

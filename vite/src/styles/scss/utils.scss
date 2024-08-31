@@ -2,3 +2,8 @@
    $result: calc($px / $base-font-size) + rem;
    @return $result;
 }
+
+@function toEm($px, $context: $base-font-size) {
+   $result: calc($px / $context) + em;
+   @return $result;
+}
